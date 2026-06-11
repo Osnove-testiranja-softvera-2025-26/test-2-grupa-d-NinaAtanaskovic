@@ -11,6 +11,13 @@ namespace GymApp.Services
         private readonly IPaymentService _paymentService;
         private readonly ITrainingService _trainingService;
         private readonly ITrainerPerformanceService _trainerPerformanceService;
+        public GymService(IPaymentService paymentService, ITrainingService trainingService, ITrainerPerformanceService trainerPerformanceService)
+        {
+            _paymentService = paymentService;
+            _trainingService = trainingService;
+            _trainerPerformanceService = trainerPerformanceService;
+        }
+        public GymService() { }
 
         public void DoStaffBonusPaymentCalculation(Trainer trainer)
         {
